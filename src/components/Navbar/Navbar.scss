@@ -1,0 +1,65 @@
+.app__navbar {
+    font-size: 0.9rem;
+    .app__navbar-head{
+        text-align: center;
+        background-color: var(--brown-color);
+        color:var(--text-white);
+        gap: 1rem;
+        padding: 0.65rem 1.25rem;
+        .app__navbar-head-link{
+            color: var(--text-white);
+            cursor: pointer;
+        }
+        @media screen and (max-width:1024px) {
+            text-align: left;
+        }
+    }
+    
+    .app__navbar-head-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--bg-black);
+        color: var(--text-white);
+        padding: 0.65rem 1.25rem;
+        p{
+            margin-right: 1rem;
+        }
+        a{
+            text-decoration: none;
+            color: var(--text-white);
+            font-size: 1.2rem;
+        }
+
+        @media screen and (max-width:1024px) {
+            justify-content: space-between;
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:2rem;
+        ul{
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+
+            .app__navbar-link {
+                text-decoration: none;
+                color: var(--bg-black);
+                font-weight: 400;
+                font-size: 1rem;
+                padding: 0.5rem;
+            }
+
+            .app__navbar-link-icon {
+                text-decoration: none;
+                color: var(--bg-black);
+                font-weight: 400;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

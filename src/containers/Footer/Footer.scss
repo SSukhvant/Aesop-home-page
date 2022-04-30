@@ -1,0 +1,191 @@
+.app__footer {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+
+    .app__footer-1 {
+        padding: 4rem 1rem;
+        display: flex;
+        flex-flow: row wrap;
+
+        .app__footer-email {
+            flex: 40%;
+            padding: 1.5rem 2rem;
+
+            .email {
+                width: 100%;
+                background-color: transparent;
+                border-style: none;
+                border: 2px solid var(--text-white);
+                padding: 0.75rem 1rem;
+                border-radius: 0.25rem;
+                caret-color: var(--text-white);
+
+                &::placeholder {
+                    font-size: 1.2rem;
+                    color: var(--text-white);
+                }
+
+                &:focus {
+                    outline: none;
+
+                    &::placeholder {
+                        color: var(--bg-black);
+                    }
+                }
+            }
+
+            .app__footer-email-checkbox {
+                input {
+                    margin-right: 1rem;
+                    margin-top: 1.5rem;
+                    border-style: none;
+                    background-color: black;
+                }
+
+                label {
+                    a {
+                        color: var(--text-white);
+                    }
+                }
+            }
+        }
+
+        .app__footer-support {
+            flex: 20%;
+            padding: 0 2rem;
+
+            ul {
+                list-style: none;
+
+                li {
+                    margin: 1rem 0;
+
+                    a {
+                        color: var(--text-white);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .app__footer-service {
+            flex: 20%;
+            padding: 0 2rem;
+
+            ul {
+                list-style: none;
+
+                li {
+                    margin: 1rem 0;
+
+                    a {
+                        color: var(--text-white);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .app__footer-location {
+            flex: 20%;
+            padding: 0 2rem;
+
+            ul {
+                list-style: none;
+
+                li {
+                    margin: 1rem 0;
+
+                    a {
+                        color: var(--text-white);
+                    }
+                }
+            }
+        }
+
+    }
+
+    .app__footer-2 {
+        padding: 4rem 1rem;
+        display: flex;
+        flex-flow: row wrap;
+
+        .app__footer-sustainability {
+            flex: 40%;
+            padding: 1.5rem 2rem;
+
+            h4 {
+                margin-bottom: 1rem;
+            }
+
+            p {
+                margin-top: 1rem;
+
+                a {
+                    text-decoration: none;
+                    color: var(--text-white);
+                }
+            }
+        }
+
+        .app__footer-about {
+            flex: 20%;
+            padding: 0 2rem;
+
+            ul {
+                list-style: none;
+
+                li {
+                    margin: 1rem 0;
+
+                    a {
+                        color: var(--text-white);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .app__footer-social {
+            flex: 20%;
+            padding: 0 2rem;
+
+            ul {
+                list-style: none;
+
+                li {
+                    margin: 1rem 0;
+
+                    a {
+                        color: var(--text-white);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .app__footer-location {
+            flex: 20%;
+            padding: 0 2rem;
+        }
+
+    }
+
+    .app__footer-3 {
+        width: 100%;
+        background-color: var(--bg-black);
+        padding: 1.5rem 3rem;
+        border-top: 2px solid var(--text-white);
+
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+
+            span {
+                font-size: 1rem;
+            }
+        }
+    }
+}
