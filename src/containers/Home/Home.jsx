@@ -5,6 +5,30 @@ import {BsChevronDown} from 'react-icons/bs';
 
 const Home = () => {
   const [toggle, setToggle] = useState(false);
+  const [userinfo, setUserInfo] = useState({});
+  
+  const handleChange = (e) => {
+    // Destructuring
+    const { name, value, checked } = e.target;
+      
+    console.log(`${value} ${name} is ${checked}`);
+    
+    // Case 1 : The user checks the box
+    if (checked) {
+      setUserInfo({
+        languages: [...languages, value],
+        response: [...languages, value],
+      });
+    }
+    // Case 2  : The user unchecks the box
+    else {
+      setUserInfo({
+        languages: languages.filter((e) => e !== value),
+        response: languages.filter((e) => e !== value),
+      });
+    }
+  };
+  console.log(userinfo)
 
   const toggleFilter = () => {
     setToggle(!toggle);
@@ -36,15 +60,15 @@ const Home = () => {
     <ul className='app__homenavbar-checkbox'>
     <li>Aroma</li>
     <li><hr/></li>
-    <li><input type="checkbox" id="allaromas" name="allaromas"/> <label for="allaromas">All aromas</label></li>
-    <li><input type="checkbox" id="scales" name="scales"/> <label for="scales">Citrus</label></li>
-    <li><input type="checkbox" id="scales" name="scales"/> <label for="scales">Floral</label></li>
-    <li><input type="checkbox" id="scales" name="scales"/> <label for="scales">Woody</label></li>
-    <li><input type="checkbox" id="scales" name="scales"/> <label for="scales">Fresh</label></li>
-    <li><input type="checkbox" id="scales" name="scales"/> <label for="scales">Spicy</label></li>
-    <li><input type="checkbox" id="scales" name="scales"/> <label for="scales">Opulent</label></li>
-    <li><input type="checkbox" id="scales" name="scales"/> <label for="scales">Earthy</label></li>
-    <li><input type="checkbox" id="scales" name="scales"/> <label for="scales">Herbaceous</label></li>
+    <li><input type="checkbox" id="allaromas" name="allaromas" onChange={handleChange}/> <label htmlFor="allaromas">All aromas</label></li>
+    <li><input type="checkbox" id="citrus" name="citrus" onChange={handleChange}/> <label htmlFor="citrus">Citrus</label></li>
+    <li><input type="checkbox" id="floral" name="floral" onChange={handleChange}/> <label htmlFor="floral">Floral</label></li>
+    <li><input type="checkbox" id="woody" name="woody" onChange={handleChange}/> <label htmlFor="woody">Woody</label></li>
+    <li><input type="checkbox" id="fresh" name="fresh" onChange={handleChange}/> <label htmlFor="fresh">Fresh</label></li>
+    <li><input type="checkbox" id="spicy" name="spicy" onChange={handleChange}/> <label htmlFor="spicy">Spicy</label></li>
+    <li><input type="checkbox" id="opulent" name="opulent" onChange={handleChange}/> <label htmlFor="opulent">Opulent</label></li>
+    <li><input type="checkbox" id="earthy" name="earthy" onChange={handleChange}/> <label htmlFor="earthy">Earthy</label></li>
+    <li><input type="checkbox" id="herbaceous" name="herbaceous" onChange={handleChange}/> <label htmlFor="herbaceous">Herbaceous</label></li>
     </ul>
   }
     </div>
