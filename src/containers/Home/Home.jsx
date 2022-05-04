@@ -1,34 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.scss';
-import { products } from '../../constant';
+import products from '../../constant/products';
 import {BsChevronDown} from 'react-icons/bs';
 
+const flatArray = Array.prototype.concat.apply([], 
+  products.map((curElem) => curElem.tag ));
+
+const obj =[... [... new Set(flatArray.map((elem) => elem)), 'All']
+.filter(function (el) {
+  return el != '';
+})];
+
 const Home = () => {
+  const [items, setItems] = useState(products);
   const [toggle, setToggle] = useState(false);
-  const [userinfo, setUserInfo] = useState({});
+  const [searchTags , setSearchTags] = useState('');
+  const [check, setCheck ] = useState(obj);
   
   const handleChange = (e) => {
-    // Destructuring
+
     const { name, value, checked } = e.target;
-      
-    console.log(`${value} ${name} is ${checked}`);
-    
-    // Case 1 : The user checks the box
-    if (checked) {
-      setUserInfo({
-        languages: [...languages, value],
-        response: [...languages, value],
-      });
+    const lowerCaseTags = name.toLowerCase().trim();
+
+    if (!checked || lowerCaseTags== 'all') {
+      setItems(products);
     }
-    // Case 2  : The user unchecks the box
+  
     else {
-      setUserInfo({
-        languages: languages.filter((e) => e !== value),
-        response: languages.filter((e) => e !== value),
+      const filteredData = products.filter(tag => {
+        return Object.keys(tag).some(key => {
+          return tag[key].toString().toLowerCase().includes(lowerCaseTags);
+        })
       });
+      setItems(filteredData);
     }
   };
-  console.log(userinfo)
 
   const toggleFilter = () => {
     setToggle(!toggle);
@@ -60,15 +66,11 @@ const Home = () => {
     <ul className='app__homenavbar-checkbox'>
     <li>Aroma</li>
     <li><hr/></li>
-    <li><input type="checkbox" id="allaromas" name="allaromas" onChange={handleChange}/> <label htmlFor="allaromas">All aromas</label></li>
-    <li><input type="checkbox" id="citrus" name="citrus" onChange={handleChange}/> <label htmlFor="citrus">Citrus</label></li>
-    <li><input type="checkbox" id="floral" name="floral" onChange={handleChange}/> <label htmlFor="floral">Floral</label></li>
-    <li><input type="checkbox" id="woody" name="woody" onChange={handleChange}/> <label htmlFor="woody">Woody</label></li>
-    <li><input type="checkbox" id="fresh" name="fresh" onChange={handleChange}/> <label htmlFor="fresh">Fresh</label></li>
-    <li><input type="checkbox" id="spicy" name="spicy" onChange={handleChange}/> <label htmlFor="spicy">Spicy</label></li>
-    <li><input type="checkbox" id="opulent" name="opulent" onChange={handleChange}/> <label htmlFor="opulent">Opulent</label></li>
-    <li><input type="checkbox" id="earthy" name="earthy" onChange={handleChange}/> <label htmlFor="earthy">Earthy</label></li>
-    <li><input type="checkbox" id="herbaceous" name="herbaceous" onChange={handleChange}/> <label htmlFor="herbaceous">Herbaceous</label></li>
+    {check.map((el, i) => {
+      return (
+      <li key={i}><input type="checkbox" id={el} name={el} onChange={handleChange}/> <label htmlFor={el}>{el}</label></li>
+      )
+    })}
     </ul>
   }
     </div>
@@ -79,8 +81,9 @@ const Home = () => {
     <p className="app__home-info">'Home is our emotional heartland,’ says globally revered designer Ilse Crawford. To complement this truth, Aesop offers a range of aromatic formulations that are practical and pleasing in equal measure.</p>
     </div>
     
-    {products.map((index) => (
-      <div className='app__home-products'>
+    {items.map((index, key) => {
+      return (
+      <div className='app__home-products' key={key}>
       <div className='app__home-product'>
       <img src={index.imgUrl} alt="candle"/>
       <h4 className='app__home-product-heading'>{index.name}</h4>
@@ -90,10 +93,11 @@ const Home = () => {
       <hr/>
       <p className='app__home-product-desc'><span>{index.descriptionTitle}</span> {index.decriptionInfo}</p>
       <hr/>
+      <p>{index.tag}</p>
       </div>
       <button type='button'>{index.availability=='1' ? 'Add to your cart - ' + `${index.price}`: 'Out of stock - ' + `${index.price}`}</button>
       </div>
-    ))}
+    ) })}
 
     </main>
     </div>

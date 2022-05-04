@@ -10,7 +10,7 @@ const Footer = () => {
       <input type="text" className='email' placeholder='Email address'/>
       <div className='app__footer-email-checkbox'>
       <input type="checkbox" id="subscribe" name="subscribe"/>
-      <label for="subscribe">Subscribe to receive communications from Aesop about our products and services. By subscribing, you confirm you have read and accept our <a href='#'>privacy policy <BsArrowUpRight/></a></label>
+      <label htmlFor="subscribe">Subscribe to receive communications from Aesop about our products and services. By subscribing, you confirm you have read and accept our <a href='#'>privacy policy <BsArrowUpRight/></a></label>
       </div>
       </div>
 

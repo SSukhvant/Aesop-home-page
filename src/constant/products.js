@@ -1,6 +1,6 @@
 import images from "./images";
 
-export const products = [
+const products = [
   {
     imgUrl: `${images.Ptolemy}`,
     name: "Ptolemy Aromatique Candle",
@@ -11,7 +11,8 @@ export const products = [
     detailsInfo: "Woody, earthy, resinous",
     decriptionInfo:
       "86 mm/3.4” diameter x 104 mm/4.1” height; burn time approximately 55-65 hours",
-      availability: '1'
+      availability: '1',
+      tag: ['Woody', 'Earthy']
   },
   {
     imgUrl: `${images.Callippus}`,
@@ -23,7 +24,8 @@ export const products = [
     detailsInfo: "Woody, earthy, green",
     decriptionInfo:
       "86 mm/3.4” diameter x 104 mm/4.1” height; burn time approximately 55-65 hours",
-      availability: '1'
+      availability: '1',
+      tag: ['Woody', 'Opulent']
   },
   {
     imgUrl: `${images.Aganice}`,
@@ -35,7 +37,8 @@ export const products = [
     detailsInfo: "Floral, spicy, fresh",
     decriptionInfo:
       "86 mm/3.4” diameter x 104 mm/4.1” height; burn time approximately 55-65 hours",
-      availability: '1'
+      availability: '1',
+      tag: ['Floral', 'Spicy', 'Opulent']
   },
   {
     imgUrl: `${images.OilBurner}`,
@@ -47,7 +50,8 @@ export const products = [
     detailsInfo: "Any interior—from Brutalist alcove to mid-century modern den.",
     decriptionInfo:
       "Dispense five to ten drops of your favoured Oil Burner Blend into the oil well. Use a standard tea light candle.",
-      availability: '1'
+      availability: '1',
+      tag: []
   },
   {
     imgUrl: `${images.YouDog}`,
@@ -59,7 +63,8 @@ export const products = [
     detailsInfo: "Two aromatic gel cleansers for beloved pets and their owners",
     decriptionInfo:
       "Geranium Leaf Body Cleanser, Animal",
-      availability: '1'
+      availability: '1',
+      tag: []
   },
   {
     imgUrl: `${images.RoomSpray}`,
@@ -71,7 +76,8 @@ export const products = [
     detailsInfo: "Three formulations to enhance any interior",
     decriptionInfo:
       "Cythera Aromatique Room Spray, Istros Aromatique Room Spray, Olous Aromatique Room Spray",
-      availability: '1'
+      availability: '1',
+      tag: ['Citrus', 'Floral', 'Woody', 'Fresh', 'Spicy']
   },
   {
     imgUrl: `${images.PostPooDrops}`,
@@ -83,7 +89,8 @@ export const products = [
     detailsInfo: "Citrus, floral, fresh",
     decriptionInfo:
       "",
-      availability: '1'
+    availability: '1',
+    tag: ['Citrus', 'Floral', 'Fresh']
   },
   {
     imgUrl: `${images.Animal}`,
@@ -95,7 +102,8 @@ export const products = [
     detailsInfo: "Pampered pets; also suitable to enjoy as a gentle regular-use hand wash.",
     decriptionInfo:
       "Massage generously into a soaked, well-brushed coat, paying careful attention to the skin, then rinse thoroughly with warm water and towel dry.",
-      availability: '1'
+      availability: '1',
+    tag: ['Citrus']
   },
   {
     imgUrl: `${images.Istros}`,
@@ -107,7 +115,8 @@ export const products = [
     detailsInfo: "Vibrant, floral, smoky",
     decriptionInfo:
       "Spray two to three pumps throughout the immediate space and refresh as needed; the aroma will last for several hours.",
-      availability: '1'
+      availability: '1',
+    tag: ['Citrus', 'Woody', 'Fresh']
   },
   {
     imgUrl: `${images.Cythera}`,
@@ -119,7 +128,8 @@ export const products = [
     detailsInfo: "Woody, opulent, spicy",
     decriptionInfo:
       "Spray two to three pumps throughout the immediate space and refresh as needed; the aroma will last for several hours.",
-      availability: '1'
+      availability: '1',
+      tag: ['Woody', 'Spicy']
   },
   {
     imgUrl: `${images.Olous}`,
@@ -131,7 +141,8 @@ export const products = [
     detailsInfo: "Fresh, woody, citrus",
     decriptionInfo:
       "Spray two to three pumps throughout the immediate space and refresh as needed; the aroma will last for several hours.",
-      availability: '1'
+      availability: '1',
+      tag: ['Floral']
   },
   {
     imgUrl: `${images.Beatrice}`,
@@ -143,7 +154,8 @@ export const products = [
     detailsInfo: "This product is currently not available. We apologise for the inconvenience.",
     decriptionInfo:
       "",
-      availability: '0'
+      availability: '0',
+      tag: []
   },
   {
     imgUrl: `${images.Isabelle}`,
@@ -155,7 +167,8 @@ export const products = [
     detailsInfo: "This product is no longer available online. We apologise for the inconvenience.",
     decriptionInfo:
       "",
-      availability: '0'
+      availability: '0',
+      tag: ['Fresh', 'Isabelle']
   },
   {
     imgUrl: `${images.Anouk}`,
@@ -167,7 +180,8 @@ export const products = [
     detailsInfo: "This product is no longer available online. We apologise for the inconvenience",
     decriptionInfo:
       "",
-      availability: '0'
+      availability: '0',
+      tag: ['Citrus', 'Floral']
   },
   {
     imgUrl: `${images.Catherine}`,
@@ -179,7 +193,8 @@ export const products = [
     detailsInfo: "This product is currently not available. We apologise for the inconvenience.",
     decriptionInfo:
       "",
-      availability: '0'
+      availability: '0',
+      tag: ['Citrus', 'Spicy']
   },
   {
     imgUrl: `${images.Stoik}`,
@@ -191,6 +206,10 @@ export const products = [
     detailsInfo: "Vetiver, Black Pepper, Elemi",
     decriptionInfo:
       "This product is currently not available. We apologise for the inconvenience.",
-      availability: '0'
+      availability: '0',
+      tag: ['']
   },
 ];
+
+export default products;
+
