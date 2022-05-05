@@ -14,27 +14,43 @@ const obj =[... [... new Set(flatArray.map((elem) => elem)), 'All']
 const Home = () => {
   const [items, setItems] = useState(products);
   const [toggle, setToggle] = useState(false);
-  const [searchTags , setSearchTags] = useState('');
+  // const [searchTags , setSearchTags] = useState({tags: []});
   const [check, setCheck ] = useState(obj);
+  // const lowTags = searchTags.tags;
+  // console.log(lowTags)
+  
+  const onlyTag = ['tag'];
   
   const handleChange = (e) => {
 
     const { name, value, checked } = e.target;
     const lowerCaseTags = name.toLowerCase().trim();
+    // console.log(lowerCaseTags)
+   
+    // const { tags } = searchTags;
+
 
     if (!checked || lowerCaseTags== 'all') {
       setItems(products);
+      // setSearchTags({
+      //   tags: tags.filter((e) => e !== name)
+      // });
     }
   
     else {
       const filteredData = products.filter(tag => {
         return Object.keys(tag).some(key => {
-          return tag[key].toString().toLowerCase().includes(lowerCaseTags);
+          return onlyTag.includes(key) ? tag[key].toString().toLowerCase().includes(lowerCaseTags) : false;
         })
       });
       setItems(filteredData);
+      // setSearchTags({
+      //   tags: [...tags, name],
+      // });
     }
   };
+  // console.log(searchTags);
+  // console.log(items);
 
   const toggleFilter = () => {
     setToggle(!toggle);

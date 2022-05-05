@@ -51,7 +51,7 @@ const products = [
     decriptionInfo:
       "Dispense five to ten drops of your favoured Oil Burner Blend into the oil well. Use a standard tea light candle.",
       availability: '1',
-      tag: []
+      tag: ['']
   },
   {
     imgUrl: `${images.YouDog}`,
@@ -64,7 +64,7 @@ const products = [
     decriptionInfo:
       "Geranium Leaf Body Cleanser, Animal",
       availability: '1',
-      tag: []
+      tag: ['']
   },
   {
     imgUrl: `${images.RoomSpray}`,
@@ -155,7 +155,7 @@ const products = [
     decriptionInfo:
       "",
       availability: '0',
-      tag: []
+      tag: ['']
   },
   {
     imgUrl: `${images.Isabelle}`,
