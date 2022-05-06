@@ -109,7 +109,6 @@ const Home = () => {
       <hr/>
       <p className='app__home-product-desc'><span>{index.descriptionTitle}</span> {index.decriptionInfo}</p>
       <hr/>
-      <p>{index.tag}</p>
       </div>
       <button type='button'>{index.availability=='1' ? 'Add to your cart - ' + `${index.price}`: 'Out of stock - ' + `${index.price}`}</button>
       </div>
