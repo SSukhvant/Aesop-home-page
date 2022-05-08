@@ -196,7 +196,6 @@
     }
 
     main {
-        position: relative;
         background-color: var(--bg-gray-light);
         display: flex;
         flex-flow: row wrap;
@@ -217,6 +216,9 @@
 
             .app__home-info {
                 font-weight: 400;
+            }
+            @media screen and (max-width:640px) {
+                padding: 1rem;
             }
         }
 
