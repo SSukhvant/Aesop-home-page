@@ -72,14 +72,13 @@ const Home = () => {
     <li><a href='#' className='app__homenavbar-link'>Home Gifts</a></li>
     </ul>
   {toggle ?
-    <button type="button" className="app__homenavbar-filter" onClick={toggleFilter}>X</button> :
-    <button type="button" className="app__homenavbar-filter" onClick={toggleFilter}>Filter by <span><BsChevronDown/></span></button>
+    <button type="button" className="app__homenavbar-filter-xl" onClick={toggleFilter}>X</button> :
+    <button type="button" className="app__homenavbar-filter-xl" onClick={toggleFilter}>Filter by <span><BsChevronDown/></span></button>
   }
-
   </div>
   {
     toggle && 
-    <ul className='app__homenavbar-checkbox'>
+    <ul className='app__homenavbar-checkbox-xl'>
     <li>Aroma</li>
     <li><hr/></li>
     {check.map((el, i) => {
@@ -89,6 +88,26 @@ const Home = () => {
     })}
     </ul>
   }
+    </div>
+
+    <div className='app__homenavbar-lg'>
+    {
+      toggle && 
+      <ul className='app__homenavbar-checkbox-lg'>
+      <li>Aroma</li>
+      <li><hr/></li>
+      {check.map((el, i) => {
+        return (
+        <li key={i}><input type="checkbox" id={el} name={el} onChange={handleChange}/> <label htmlFor={el}>{el}</label></li>
+        )
+      })}
+      </ul>
+    }
+
+    {toggle ?
+      <button type="button" className="app__homenavbar-filter-lg" onClick={toggleFilter}>X</button> :
+      <button type="button" className="app__homenavbar-filter-lg" onClick={toggleFilter}>Filter by <span><BsChevronDown/></span></button>
+    }
     </div>
 
     <main>

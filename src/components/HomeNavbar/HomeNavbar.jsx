@@ -4,6 +4,7 @@ import {BsChevronDown} from 'react-icons/bs';
 
 const HomeNavbar = () => {
   return (
+    <>
     <div className='app__homenavbar'>
       <ul>
       <li><a href='#' className='app__homenavbar-link'>All Home</a></li>
@@ -13,8 +14,9 @@ const HomeNavbar = () => {
       <li><a href='#' className='app__homenavbar-link'>Home Gifts</a></li>
       </ul>
 
-     <button type="button" className="app__homenavbar-filter">Filter by <span><BsChevronDown/></span></button>
+     <button type="button" className="app__homenavbar-filter-xl">Filter by <span><BsChevronDown/></span></button>
     </div>
+    </>
   )
 }
 

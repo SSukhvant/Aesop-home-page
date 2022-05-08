@@ -26,6 +26,15 @@
             color: var(--bg-black);
             padding: 1rem;
         }
+        @media screen and (max-width:1024px) {
+            flex-direction: row;
+            .app__home-logo{
+                font-size: 1.5rem;
+            }
+            .app__home-text{
+                margin: 0 auto;
+            }
+    }
     }
 
     .app__homenavbar-section{
@@ -62,7 +71,7 @@
                     }
                 }
             }
-            .app__homenavbar-filter{
+            .app__homenavbar-filter-xl{
                 border-style: none;
                 padding: 1rem 1.5rem;
                 border: 1px solid rgba(51,51,51,.2);
@@ -74,19 +83,86 @@
                 align-items: center;
                 gap: 1rem;
                 cursor: pointer;
+
+                @media screen and (max-width:1024px) {
+                    display: none;
+                }
                 }
         }
-        .app__homenavbar-checkbox{
+        .app__homenavbar-checkbox-xl{
             width: 20%;
             list-style: none;
             padding: 1rem 3rem;
             li {
                 margin: 0.75rem 0;
             }
+
+            @media screen and (max-width:1024px) {
+                display: none;
+            }
+        }
+    }
+
+    .app__homenavbar-lg {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1rem;
+        background-color: var(--bg-gray-light);
+
+        .app__homenavbar-filter-lg{
+            margin-left: auto;
+            border-style: none;
+            padding: 1rem 1.5rem;
+            border: 1px solid rgba(51,51,51,.2);
+            color: var(--bg-black);
+            font-size: 0.9rem;
+            font-weight: 500;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+    
+            @media screen and (min-width:1024px) {
+                display: none;
+            }
+            @media screen and (max-width:640px) {
+                width: 100%;
+            }
+            }
+    
+            .app__homenavbar-checkbox-lg {
+                width: 20%;
+                list-style: none;
+                padding: 1rem 2rem;
+                li {
+                    margin: 0.75rem 0;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+    
+                @media screen and (min-width:1024px) {
+                    display: none;
+                }
+            }
+            @media screen and (max-width:640px) {
+                flex-direction: column;
+                .app__homenavbar-filter-lg {
+                 order: 1;
+                }
+            .app__homenavbar-checkbox-lg {
+               order: 2;
+            }
         }
     }
 
     main {
+        position: relative;
         background-color: var(--bg-gray-light);
         display: flex;
         flex-flow: row wrap;
